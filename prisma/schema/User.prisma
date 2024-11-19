@@ -1,0 +1,41 @@
+model User {
+  id                 Int       @id @default(autoincrement())
+  username           String
+  firstname          String
+  lastname           String
+  birthdate          String?   
+  email              String    @unique
+  phonenumber        Int
+  password           String
+  role               Role      @default(client)
+  resetcode          Int?
+  resetcodecreatedAt DateTime?
+  accesstoken        String[]
+  fcmToken        String[]
+  premium         Boolean  @default(false)
+  paymentdate         DateTime?  
+  CentralUnit CentralUnit[]
+
+  
+
+  Task Task[] @relation("UserTasks")
+
+  TaskTechnician Task[] @relation("TechnicianTasks")
+
+  Notification Notification[]
+
+  Transaction Transaction[]
+
+  Vote Vote[]
+
+  Post Post[]
+
+  Comment Comment[]
+}
+
+enum Role {
+  farmer
+  admin
+  client
+  technician
+}

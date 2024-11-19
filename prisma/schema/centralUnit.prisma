@@ -1,0 +1,18 @@
+model CentralUnit {
+  id        Int    @id @default(autoincrement())
+  uuid      String @unique
+  label     String
+  owner     User?  @relation(fields: [ownerId], references: [id])
+  ownerId   Int?
+  status    Status @default(inStock)
+  longitude Float? 
+  latitude  Float?
+  Rooms     Room[]
+}
+
+enum Status {
+  active
+  inactive
+  inStock
+  maintenance
+}

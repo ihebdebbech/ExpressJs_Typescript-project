@@ -1,0 +1,22 @@
+model Transaction {
+  id               String           @id 
+  amount           Float
+  currency         String           
+  type             TransactionType 
+  transactionDate  DateTime         @default(now())      
+  userId           Int    
+  user             User             @relation(fields: [userId], references: [id])
+  status           TransactionStatus @default(PENDING)
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+enum TransactionType {
+  PREMIUM
+  PAYMENT
+  REFUND
+}

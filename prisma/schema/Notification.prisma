@@ -1,0 +1,17 @@
+model Notification {
+  id            Int    @id @default(autoincrement())
+  userId      Int
+  title       String
+  type         typeNotif @default(data)
+  body        String
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  
+  // Relationships
+  user        User     @relation(fields: [userId], references: [id])
+}
+enum typeNotif {
+  data
+  alert
+  task
+}

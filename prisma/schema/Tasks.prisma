@@ -1,0 +1,34 @@
+model Task {
+  id             Int       @id @default(autoincrement())
+  title          String    
+  description    String?   
+  taskType       TaskType  
+  status         TaskStatus @default(pending) 
+  report         String?  
+  longitude      Float?    
+  latitude       Float?    
+  createdAt      DateTime  @default(now()) 
+ 
+  
+  dueDate        DateTime? 
+ 
+  completedAt    DateTime? 
+  
+  technicianId   Int       
+  technician     User      @relation("TechnicianTasks", fields: [technicianId], references: [id]) 
+  
+  userEmail         String
+  user           User      @relation("UserTasks", fields: [userEmail], references: [email])
+}
+
+enum TaskType {
+  installation
+  calibration
+  troubleshooting
+}
+
+enum TaskStatus {
+  pending
+  inProgress
+  completed //
+}

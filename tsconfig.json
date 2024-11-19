@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                  // Target ECMAScript version
+    "module": "commonjs",             // Module code generation
+    "strict": true,                   // Enable all strict type-checking options
+    "esModuleInterop": true,          // Enable interop between CommonJS and ES Modules
+    "skipLibCheck": true,             // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,  // Enforce case consistency in filenames
+    "allowJs": true,                  // Allow JavaScript files to be compiled
+    "checkJs": true,                  // Check JavaScript files for errors
+    "outDir": "./dist",               // Redirect output structure to this directory
+    "rootDir": "./",               // Specify the root directory of input files
+    "noEmit": false,
+    "resolveJsonModule": true,  // Allows importing JSON files
+    "esModuleInterop": true                    // Set to true if you don't want to emit output files
+  },
+  "include": ["./**/*.ts", "./**/*.js"],  // Include TypeScript and JavaScript files
+  "exclude": ["node_modules", "dist"]         // Exclude node_modules and dist directories
+}

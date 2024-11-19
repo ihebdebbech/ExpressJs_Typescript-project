@@ -1,0 +1,22 @@
+<!-- public/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <script>
+        // Replace this with your app's URL
+        const appUrl = 'yourapp://success';
+
+        // Redirect after a short delay
+        setTimeout(() => {
+            window.location.href = appUrl;
+        }, 3000); // Redirects after 3 seconds
+    </script>
+</head>
+<body>
+    <h1>Payment Successful!</h1>
+    <p>You will be redirected back to the app shortly...</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+model SensorData {
+  id         Int      @id @default(autoincrement())
+  type       Type   // Type of sensor data (e.g., pH, EC, etc.)
+  value      Float
+  timestamp  DateTime @default(now())
+  roomId     Int      // Foreign key to Room
+  room       Room     @relation(fields: [roomId], references: [id])
+}
+enum Type {
+ ph
+ ec
+ co2
+ waterLevel
+ humidity
+ airTemp
+ waterTemp
+}

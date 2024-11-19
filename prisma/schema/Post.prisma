@@ -1,0 +1,12 @@
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  Image     String?
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  comments  Comment[]
+  votes     Vote[]
+ 
+}

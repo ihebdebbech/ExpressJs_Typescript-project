@@ -1,0 +1,11 @@
+model Order {
+  id            Int      @id @default(autoincrement())
+  customerEmail String
+  orderDate     DateTime @default(now())
+  status        String   @default("pending")
+  totalAmount   Float
+  roomSizes     Float[]
+  latitude      Float
+  longitude     Float
+  numTelephone  Int
+}

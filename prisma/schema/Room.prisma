@@ -1,0 +1,40 @@
+model Room {
+  id                Int     @id @default(autoincrement())
+  name              String
+  roomTopic         String
+  centralUnitUuid   String
+  plantName         String
+  neededPh          Float[]
+  neededEc          Float[]
+  neededAirTemp     Float[]
+  neededWaterTemp   Float[]
+  neededCo2         Float[]
+  neededHumidity    Float[]
+  quantitySolA      Float?
+  quantitySolB      Float?
+  QuantityPhDown    Float?
+  waterRunningTime  Int
+
+  waterPumpSchedule Float 
+ 
+  latestPh          Float @default(0)
+  latestEc          Float @default(0)
+  latestAirTemp     Float @default(0)
+  latestWaterTemp   Float @default(0)
+  latestCo2         Float @default(0)
+  latestHumidity    Float @default(0)
+  latestWaterLevel  Float @default(0)
+  latestCalibrationPh DateTime?
+  latestCalibrationEc DateTime?
+  updatedAt         DateTime?    @updatedAt
+  sensorData        SensorData[] // Relation with SensorData
+ // sensors           Sensor[]    // Relation with Sensor
+  Status            StatusR @default(active)
+  centralUnit   CentralUnit?  @relation(fields: [centralUnitUuid], references: [uuid])
+}
+enum StatusR {
+  active
+  inactive
+  
+}
+

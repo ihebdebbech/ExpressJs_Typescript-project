@@ -1,0 +1,8 @@
+model Stock {
+    id       Int     @id @default(autoincrement())
+    name     String  @unique
+    category String  
+    price    Float
+    image    String?
+    quantite Int?
+}

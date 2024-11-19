@@ -1,0 +1,9 @@
+node_modules
+prisma/migrations
+
+.env
+package-lock.json
+greeny-solutions-firebase-adminsdk-23k5o-4d50fdf51d.json
+greeny-solutions-technician-firebase-adminsdk-8g6no-db963ba4ed.json
+greenysol-firebase-adminsdk-joi3b-4fb3ececd4.json
+public/uploads/
